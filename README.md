@@ -21,23 +21,23 @@ Ambulance-Asha 2.0 leverages a **Dual-Model Hybrid-Edge Architecture** to strike
 
 ```mermaid
 graph TD
-    A[Paramedic Voice Input] --> B[Siri-Style Procedural Wave Visualizer]
-    A --> C[HTML5 MediaRecorder (Offline WebM Blob)]
-    C --> C2[FastAPI /transcribe Endpoint]
-    C2 --> C3[faster-whisper tiny Local STT]
-    C3 --> D[FastAPI Backend Routing]
+    A["Paramedic Voice Input"] --> B["Siri-Style Procedural Wave Visualizer"]
+    A --> C["HTML5 MediaRecorder (Offline WebM Blob)"]
+    C --> C2["FastAPI /transcribe Endpoint"]
+    C2 --> C3["faster-whisper tiny Local STT"]
+    C3 --> D["FastAPI Backend Routing"]
     
-    D --> E[gemma4:e2b - The Sprinter]
-    E --> F{Priority Determination}
+    D --> E["gemma4:e2b - The Sprinter"]
+    E --> F{"Priority Determination"}
     
-    F -->|RED / YELLOW| G[Hospital Notified via Tool Call]
-    F -->|RED / YELLOW| H[Auto-Trigger Deep Specialist Review]
+    F -->|RED / YELLOW| G["Hospital Notified via Tool Call"]
+    F -->|RED / YELLOW| H["Auto-Trigger Deep Specialist Review"]
     
-    D --> I[gemma4:26b - The Specialist]
+    D --> I["gemma4:26b - The Specialist"]
     H --> I
-    I --> J[Generates Detailed Clinical Protocol]
+    I --> J["Generates Detailed Clinical Protocol"]
     
-    E --> K[Next.js Pulse HUD Dashboard]
+    E --> K["Next.js Pulse HUD Dashboard"]
     J --> K
 ```
 
