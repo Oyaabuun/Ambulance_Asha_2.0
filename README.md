@@ -116,11 +116,8 @@ ollama pull gemma4:26b
 
 To test the backend independently of the UI:
 1. Make sure your FastAPI backend is running.
-2. Execute the test suite script:
-   ```bash
-   python backend/test_triage.py
-   ```
-3. This sends a mock high-severity trauma report (`"Patient is unconscious with a deep puncture wound in the abdomen. Massive blood loss."`) and verifies that `gemma4:e2b` correctly triggers the `alert_hospital` tool call and returns triage telemetry.
+
+2. PASTE THIS ON THE FRONTEND AT http://localhost:3000 (`"Patient is unconscious with a deep puncture wound in the abdomen. Massive blood loss."`) 
 
 ---
 
