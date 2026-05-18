@@ -1,0 +1,80 @@
+I've overhauled Ambulance-Asha to turn it into a premium, hackathon-winning submission. We've moved away from the basic script and Streamlit UI to a professional Hybrid-Edge Architecture with a high-end Next.js dashboard.
+
+🚀 Advanced Features Added:
+Hybrid-Edge Architecture:
+Gemma 4:e2b (The Sprinter): Handles real-time voice-to-triage and immediate hospital alerts in milliseconds.
+Gemma 4:26b (The Specialist): Triggered for "Deep Analysis" to provide clinical-grade protocols and risk assessments.
+Modern Dashboard (Next.js + Tailwind + Framer Motion):
+Glassmorphic UI: A dark, premium medical interface with smooth animations.
+Live Metrics: Real-time display of model inference speeds (ms for edge vs seconds for reasoning).
+Animated Triage HUD: Visual priority indicators (RED/YELLOW/GREEN) with pulsing emergency states.
+Asha's Thought Feed: A live transcript area showing the interaction between the field and the AI.
+Real-World Utility:
+Native Tool Calling: The edge model automatically triggers hospital notifications for high-priority cases.
+Deep Reasoning: A "Request Specialist Protocol" button that leverages the 26B model for complex scenarios.
+🛠️ How to Launch & Test:
+1. Start the Backend (FastAPI) In your backend terminal, ensure the server is running (it will auto-reload with the new CORS and Deep Analysis endpoints):
+
+powershell
+# If not already running:
+uvicorn main:app --reload
+2. Start the Frontend (Next.js) In a new terminal, navigate to the frontend folder and run:
+
+powershell
+cd frontend
+npm run dev
+3. Open the Dashboard Go to http://localhost:3000 in your browser.
+
+🏆 Hackathon Winning Strategy:
+Track "Ollama": You are showcasing local execution of both a small edge model and a large frontier model simultaneously.
+Track "Global Resilience": This system operates entirely offline (on the edge), making it perfect for disaster response or rural areas.
+Wow Factor: The real-time metrics and smooth animations in the Next.js UI will stand out significantly compared to standard demo apps.
+Ready to win this! Try typing a complex scenario like "Patient is responsive but has a sucking chest wound and rapid, shallow breathing" and then hit the "Request Protocol" button to see the 26B model in action.
+
+
+*********************************************************************************************************************************************************************************************************************
+*********************************************************************************************************************************************************************************************************************
+*********************************************************************************************************************************************************************************************************************
+
+# Implementation Plan: Ambulance-Asha 2.0 (The Hybrid Edge Edition)
+
+To win the Gemma 4 Hackathon, we need to showcase **Utility**, **Technical Depth**, and **"Wow" Factor**. This plan upgrades the project from a simple script to a premium, high-stakes medical dashboard.
+
+## User Review Required
+
+> [!IMPORTANT]
+> This plan replaces the Streamlit frontend with a **Next.js** application. I will need to initialize a new project in the `frontend/` directory.
+
+> [!WARNING]
+> Running two Gemma models (26B and e2b) simultaneously requires significant VRAM. Ensure your system can handle the load, or we can implement a sequential fallback.
+
+## Proposed Changes
+
+### 1. Backend Enhancement [MODIFY] [backend/main.py](file:///d:/Hackathons/gemma_hackathon/backend/main.py)
+- **Hybrid-Edge Logic**: 
+  - `gemma4:e2b` (The Sprinter): Handles immediate voice-to-triage and tool calling (Hospital Alerts).
+  - `gemma4:26b` (The Specialist): Triggered for "Deep Analysis" to provide complex medical protocols and risk assessments.
+- **CORS Support**: Add CORS middleware to allow the Next.js frontend to communicate with the FastAPI backend.
+
+### 2. Frontend Revolution [NEW] [frontend/*](file:///d:/Hackathons/gemma_hackathon/frontend)
+- **Framework**: Next.js 15+ (App Router).
+- **Styling**: Tailwind CSS + Framer Motion for premium animations.
+- **UI Components**:
+  - **The Pulse Dashboard**: A dark-mode, glassmorphic interface with a pulsing "Live" indicator.
+  - **Triage HUD**: Large, color-coded priority levels (RED/YELLOW/GREEN) that animate on change.
+  - **Asha's Reasoning**: A "Thought Process" viewer to show the judges how Gemma 4 is thinking (transparency).
+  - **One-Tap Actions**: Buttons for parmedics to confirm hospital alerts or request a "Second Opinion" from the 26B model.
+
+### 3. New Features
+- **Second Opinion**: A dedicated button that sends the current state to the 26B model for a high-precision medical protocol.
+- **Protocol Generation**: Automated first-aid checklists based on the triage result.
+
+## Verification Plan
+
+### Automated Tests
+- Use `test_triage.py` to verify the backend still handles tool calls correctly.
+- Run `npm run dev` to verify the frontend loads and connects to the API.
+
+### Manual Verification
+- Simulate a "RED" emergency and verify the UI updates in real-time with an aggressive, urgent visual state.
+- Trigger a "Deep Analysis" and verify the 26B model provides more nuanced advice than the edge model.
